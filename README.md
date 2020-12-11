@@ -1,4 +1,4 @@
-# bath-center
+# vue3+webpack4 project
 
 ## Project setup
 ```

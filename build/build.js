@@ -1,10 +1,9 @@
 /*
- * @Author: your name
+ * @Author: wangn
  * @Date: 2020-12-11 15:22:33
- * @LastEditTime: 2020-12-11 15:45:50
+ * @LastEditTime: 2020-12-11 17:50:45
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \bath-center\build\build.js
+ * @Description: 生产环境打包
  */
 'use strict'
 var argv = require('yargs').argv
@@ -40,7 +39,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       stats.toString({
         colors: true,
         modules: false,
-        children: false, // If you are using ts-loader, setting this to true will make TypeScript errors show up during build.
+        children: true, // If you are using ts-loader, setting this to true will make TypeScript errors show up during build.
         chunks: false,
         chunkModules: false,
       }) + '\n\n',

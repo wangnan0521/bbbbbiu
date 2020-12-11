@@ -4,7 +4,6 @@
  * @LastEditTime: 2020-12-11 15:27:31
  * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: \bath-center\config\stage.env.js
  */
 'use strict'
 module.exports = {

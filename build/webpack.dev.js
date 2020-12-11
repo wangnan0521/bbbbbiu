@@ -1,15 +1,14 @@
 /*
- * @Author: your name
+ * @Author: wangn
  * @Date: 2020-12-03 16:28:09
- * @LastEditTime: 2020-12-11 16:36:29
+ * @LastEditTime: 2020-12-11 18:01:20
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \bath-center\config\webpack.dev.js
+ * @Description: dev
  */
 "use strict";
 const utils = require("./utils");
 const webpack = require("webpack");
-const config = require('../config')
+const config = require("../config");
 const merge = require("webpack-merge");
 const path = require("path");
 const baseWebpackConfig = require("./webpack.base");
@@ -29,10 +28,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }),
   },
 
-  mode: 'development', 
+  mode: "development",
 
   // cheap-module-eval-source-map is faster for development
   devtool: config.dev.devtool,
+
+  optimization: {
+    namedModules: true,
+    noEmitOnErrors: true,
+  },
 
   // these devServer options should be customized in /config/index.js
   devServer: {
@@ -68,8 +72,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       BASEURL: JSON.stringify("https://baidu.com/"), // test
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-    new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: "index.html",

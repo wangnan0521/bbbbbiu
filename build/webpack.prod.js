@@ -9,7 +9,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // dl 新增
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const env = (function() {
   if (process.env.NODE_ENV === "develop") {
@@ -39,6 +39,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath("js/[id].[chunkhash].js"),
   },
   optimization: {
+    concatenateModules: true,
     runtimeChunk: {
       name: "manifest",
     },
@@ -111,8 +112,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
-    // enable scope hoisting
-    new webpack.optimize.ModuleConcatenationPlugin(),
 
     // copy custom static assets
     new CopyWebpackPlugin([

@@ -1,10 +1,9 @@
 /*
- * @Author: your name
+ * @Author: wangn
  * @Date: 2020-12-03 16:27:53
- * @LastEditTime: 2020-12-11 16:37:07
+ * @LastEditTime: 2020-12-11 17:53:36
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \bath-center\config\webpack.base.js
+ * @Description: 基础配置
  */
 "use strict";
 const path = require("path");

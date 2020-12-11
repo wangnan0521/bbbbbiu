@@ -1,3 +1,8 @@
+/*
+ * @Author: wangn
+ * @Date: 2020-12-04 16:32:57
+ * @LastEditTime: 2020-12-11 17:52:33
+ */
 "use strict";
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -26,7 +31,7 @@ exports.cssLoaders = function(options) {
     },
   };
 
-  // generate loader string to be used with extract text plugin
+  // generate loader string to be used with MiniCssExtractPlugin
   function generateLoaders(loader, loaderOptions) {
     const loaders = options.usePostCSS
       ? [cssLoader, postcssLoader]
@@ -48,7 +53,6 @@ exports.cssLoaders = function(options) {
     }
   }
 
-  // https://vue-loader.vuejs.org/en/configurations/extract-css.html
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),

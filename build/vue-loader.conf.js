@@ -1,10 +1,8 @@
 /*
- * @Author: your name
+ * @Author: wangn
  * @Date: 2020-12-03 17:04:22
- * @LastEditTime: 2020-12-04 16:39:36
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: \bath-center\config\vue-loader.conf.js
+ * @LastEditTime: 2020-12-11 17:52:56
+ * @Description: vue loader配置
  */
 "use strict";
 const utils = require("./utils");
